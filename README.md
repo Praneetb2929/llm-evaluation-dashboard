@@ -62,11 +62,11 @@ Scored using Detoxify, a BERT-based toxicity classifier.
 ## Project Structure
 llm-eval-dashboard/
 
-├── dataset.json        # evaluation questions with reference answers
+├── dataset.json         # evaluation questions with reference answers
 
-├── model_runner.py     # calls all 3 models, collects responses
+├── model_runner.py      # calls all 3 models, collects responses
 
-├── scorer.py           # computes faithfulness, relevance, toxicity
+├── scorer.py            # computes faithfulness, relevance, toxicity
 
 ├── main.py             # orchestrates the full pipeline
 
