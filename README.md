@@ -60,3 +60,98 @@ Scored using Detoxify, a BERT-based toxicity classifier.
 ---
 
 ## Project Structure
+llm-eval-dashboard/
+├── dataset.json        # evaluation questions with reference answers
+├── model_runner.py     # calls all 3 models, collects responses
+├── scorer.py           # computes faithfulness, relevance, toxicity
+├── main.py             # orchestrates the full pipeline
+├── dashboard.py        # Streamlit visualization app
+├── requirements.txt    # dependencies
+└── .gitignore          # keeps secrets out of version control
+
+---
+
+## How to Run Locally
+
+**1. Clone the repo**
+```bash
+git clone https://github.com/Praneetb2929/llm-evaluation-dashboard.git
+cd llm-evaluation-dashboard
+```
+
+**2. Create virtual environment**
+```bash
+python -m venv venv
+venv\Scripts\activate       # Windows
+source venv/bin/activate    # Mac/Linux
+```
+
+**3. Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+**4. Add API keys**
+
+Create a `.env` file in the root folder:
+GROQ_API_KEY=your_groq_key_here
+HF_TOKEN=your_hf_token_here
+Get free keys from:
+- Groq — console.groq.com
+- HuggingFace — huggingface.co/settings/tokens
+
+**5. Start Ollama (for local model)**
+```bash
+ollama pull qwen2.5:1.5b
+ollama serve
+```
+
+**6. Run the evaluation pipeline**
+```bash
+python main.py
+```
+
+**7. Launch the dashboard**
+```bash
+streamlit run dashboard.py
+```
+
+---
+
+## Key Findings
+
+- All three models scored within 1 point of each other (80.3–80.7/100) on 
+  factual Q&A tasks, showing that smaller models are competitive with larger 
+  ones on well-defined knowledge questions
+- Qwen 2.5 1.5B running locally matched cloud-hosted 70B models on relevance, 
+  suggesting over-parameterization for simple factual retrieval
+- Toxicity scores were uniformly high (clean) across all models on the 
+  technical dataset used
+
+---
+
+## Why This Project Matters
+
+Most engineers stop at "call the API and display the output." This project 
+goes further — it treats LLM output as data to be measured, compared, and 
+understood systematically. That's what production AI teams actually do.
+
+Skills demonstrated:
+- Multi-model API integration (cloud + local)
+- Automated NLP evaluation (embeddings, classifiers)
+- Local LLM deployment with Ollama
+- Secrets management and secure deployment
+- Interactive data visualization
+
+---
+
+## Author
+
+**Praneet Biswal**  
+[GitHub](https://github.com/Praneetb2929)
+
+---
+
+## License
+
+MIT
