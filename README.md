@@ -60,22 +60,17 @@ Scored using Detoxify, a BERT-based toxicity classifier.
 ---
 
 ## Project Structure
+```
 llm-eval-dashboard/
-
 ├── dataset.json         # evaluation questions with reference answers
-
 ├── model_runner.py      # calls all 3 models, collects responses
-
 ├── scorer.py            # computes faithfulness, relevance, toxicity
-
 ├── main.py             # orchestrates the full pipeline
-
 ├── dashboard.py        # Streamlit visualization app
-
 ├── requirements.txt    # dependencies
-
 └── .gitignore          # keeps secrets out of version control
 
+```
 ---
 
 ## How to Run Locally
