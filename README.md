@@ -101,8 +101,8 @@ pip install -r requirements.txt
 **4. Add API keys**
 
 Create a `.env` file in the root folder:
-GROQ_API_KEY=your_groq_key_here
-HF_TOKEN=your_hf_token_here
+-GROQ_API_KEY=your_groq_key_here
+-HF_TOKEN=your_hf_token_here
 Get free keys from:
 - Groq — console.groq.com
 - HuggingFace — huggingface.co/settings/tokens
