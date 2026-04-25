@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "question": "What causes inflation?",
+    "context": "Macroeconomics",
+    "reference": "Inflation is caused by excess money supply, demand-pull pressure, cost-push factors like rising production costs, and supply chain disruptions."
+  },
+  {
+    "id": 2,
+    "question": "Explain how HTTPS works",
+    "context": "Networking security",
+    "reference": "HTTPS uses TLS to encrypt HTTP traffic. A handshake exchanges keys using asymmetric crypto, then data is encrypted with a symmetric session key."
+  },
+  {
+    "id": 3,
+    "question": "What is retrieval-augmented generation?",
+    "context": "AI systems",
+    "reference": "RAG retrieves relevant documents from a vector store using embeddings and injects them into the LLM context to ground its response in facts."
+  }
+]
